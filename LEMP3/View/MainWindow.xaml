@@ -1,0 +1,58 @@
+﻿<Window x:Class="LEMP3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        mc:Ignorable="d ignore"
+        Height="130"
+        Width="400"
+        Title="LEMP3"
+        WindowStyle="None"
+        Topmost="True"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border BorderBrush="#FF007ACC"
+            Background="#FF2D2D30"
+            BorderThickness="1"
+            Margin="10">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0"
+                              BlurRadius="20"
+                              Color="#FF32A4A4" />
+        </Border.Effect>
+        <Grid>
+
+            <Grid Grid.Column="0"
+                  Background="#FF32A4A4">
+                <TextBlock Text="LEMP3"
+                           Margin="5, -5, 0 ,0"
+                           Height="40"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           FontSize="36"
+                           FontFamily="Microsoft MHei"
+                           Foreground="Azure"/>
+            </Grid>
+
+            <ContentControl Grid.Column="1"
+                            Content="{Binding ToolBoxVM}" />
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Border>
+</Window>

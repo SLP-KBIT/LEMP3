@@ -1,0 +1,25 @@
+﻿<Application x:Class="LEMP3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:LEMP3.ViewModel"
+             xmlns:v_toolbox="clr-namespace:LEMP3.View.Toolbox"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             StartupUri="View/MainWindow.xaml"
+             mc:Ignorable="d">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator xmlns:vm="clr-namespace:LEMP3.ViewModel" x:Key="Locator"/>
+
+            <DataTemplate DataType="{x:Type vm:ToolBoxViewModel}">
+                <v_toolbox:ToolBox />
+            </DataTemplate>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/Button/MetroButtonStyle.xaml" />
+                <ResourceDictionary Source="Skins/Button/CaptionButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
