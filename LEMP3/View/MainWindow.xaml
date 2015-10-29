@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
         mc:Ignorable="d ignore"
-        Height="130"
-        Width="400"
+        Height="120"
+        Width="360"
         Title="LEMP3"
         WindowStyle="None"
         Topmost="True"
@@ -45,10 +45,8 @@
                            FontFamily="Microsoft MHei"
                            Foreground="Azure"/>
             </Grid>
-
             <ContentControl Grid.Column="1"
                             Content="{Binding ToolBoxVM}" />
-            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="2*" />

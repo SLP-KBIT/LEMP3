@@ -7,21 +7,65 @@
              mc:Ignorable="d ignore">
 
     <Grid>
-        <Grid Grid.Row="0" Margin="210,0,0,0">
-            <StackPanel HorizontalAlignment="Right"
-                        Orientation="Horizontal">
-                <Button Name="ExitButton"
-                        Grid.Row="0"
-                        Height="18"
-                        Width="13"
-                        Content="r"
-                        HorizontalAlignment="Right"
-                        Style="{StaticResource CaptionButtonStyleKey}" />
+        <Grid Grid.Row="0"
+              VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="5,2,0,0"
+                       Height="30"
+                       FontSize="20"
+                       Foreground="White"
+                       Text="00:00" />
+
+            <Button Name="ExitButton"
+                    Grid.Row="0"
+                    Height="18"
+                    Width="13"
+                    Content="r"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource CaptionButtonStyleKey}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Height="15"
+                       Foreground="White"
+                       Background="#B2000000" />
+        </Grid>
+        <Grid Grid.Row="2"
+              VerticalAlignment="Bottom" 
+              Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <Grid Margin="5,0">
+                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                    <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z" Fill="White" HorizontalAlignment="Left" Height="16.042" Margin="5.833,7.916,0,0" Stretch="Fill" VerticalAlignment="Top" Width="16.168" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+                <Grid Margin="5,0">
+                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                    <Path Data="M146, 74 L146, 90 162, 82 z" HorizontalAlignment="Left" Height="16.042" Margin="9, 8, 0, 0" Stretch="Fill" VerticalAlignment="Top" Width="15" Fill="White"/>
+                </Grid>
+                <Grid Margin="5,0">
+                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                    <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z" Fill="White" HorizontalAlignment="Left" Height="16.042" Margin="8.585,7.916,0,0" Stretch="Fill" VerticalAlignment="Top" Width="15.082"/>
+                </Grid>
+                <Grid Margin="5,0">
+                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                    <Rectangle HorizontalAlignment="Left" Height="12" Margin="8,10,0,0" Stroke="White" VerticalAlignment="Top" Width="5" Fill="White"/>
+                    <Rectangle HorizontalAlignment="Left" Height="12" Margin="18,10,0,0" Stroke="White" VerticalAlignment="Top" Width="5" Fill="White"/>
+                </Grid>
             </StackPanel>
         </Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
     </Grid>
 </UserControl>
