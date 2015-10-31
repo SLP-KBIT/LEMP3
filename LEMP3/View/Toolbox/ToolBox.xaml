@@ -5,14 +5,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ignore="http://www.ignore.com"
              mc:Ignorable="d ignore">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate" TargetType="{x:Type Button}">
+            <Border x:Name="border" Background="Transparent" >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                              Storyboard.TargetName="border">
+                                    <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF333333">
+                                        <EasingColorKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingColorKeyFrame.EasingFunction>
+                                    </EasingColorKeyFrame>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                              Storyboard.TargetName="border">
+                                    <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF89B1EB">
+                                        <EasingColorKeyFrame.EasingFunction>
+                                            <CircleEase EasingMode="EaseInOut"/>
+                                        </EasingColorKeyFrame.EasingFunction>
+                                    </EasingColorKeyFrame>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                                    <EasingColorKeyFrame KeyTime="0:0:0.1" Value="White">
+                                        <EasingColorKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingColorKeyFrame.EasingFunction>
+                                    </EasingColorKeyFrame>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter TextBlock.Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
 
     <Grid>
         <Grid Grid.Row="0"
               VerticalAlignment="Top">
             <TextBlock HorizontalAlignment="Left"
-                       Margin="5,2,0,0"
-                       Height="30"
+                       Margin="5,0,0,0"
+                       Height="28"
                        FontSize="20"
+                       FontFamily="Microsoft JhengHei UI"
                        Foreground="White"
                        Text="00:00" />
 
@@ -32,34 +80,118 @@
         </Grid>
         <Grid Grid.Row="2"
               VerticalAlignment="Bottom" 
-              Margin="0,0,0,10">
+              Margin="0,5,0,5">
             <StackPanel Orientation="Horizontal">
-                <Grid Margin="5,0">
-                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
-                    <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z" Fill="White" HorizontalAlignment="Left" Height="16.042" Margin="5.833,7.916,0,0" Stretch="Fill" VerticalAlignment="Top" Width="16.168" RenderTransformOrigin="0.5,0.5">
-                        <Path.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Path.RenderTransform>
-                    </Path>
-                </Grid>
-                <Grid Margin="5,0">
-                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
-                    <Path Data="M146, 74 L146, 90 162, 82 z" HorizontalAlignment="Left" Height="16.042" Margin="9, 8, 0, 0" Stretch="Fill" VerticalAlignment="Top" Width="15" Fill="White"/>
-                </Grid>
-                <Grid Margin="5,0">
-                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
-                    <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z" Fill="White" HorizontalAlignment="Left" Height="16.042" Margin="8.585,7.916,0,0" Stretch="Fill" VerticalAlignment="Top" Width="15.082"/>
-                </Grid>
-                <Grid Margin="5,0">
-                    <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
-                    <Rectangle HorizontalAlignment="Left" Height="12" Margin="8,10,0,0" Stroke="White" VerticalAlignment="Top" Width="5" Fill="White"/>
-                    <Rectangle HorizontalAlignment="Left" Height="12" Margin="18,10,0,0" Stroke="White" VerticalAlignment="Top" Width="5" Fill="White"/>
-                </Grid>
+                        
+                <Button Background="Transparent"
+                        Margin="5, 4.5"
+                        BorderThickness="0"
+                        Template="{DynamicResource ButtonControlTemplate}"
+                        Padding="0"
+                        BorderBrush="Transparent">
+                    <Grid>
+                        <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                        <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z"
+                              Fill="White"
+                              HorizontalAlignment="Left"
+                              Height="16.042"
+                              Margin="5.833,7.916,0,0"
+                              Stretch="Fill"
+                              VerticalAlignment="Top"
+                              Width="16.168"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Button>
+                <Button Background="Transparent"
+                        BorderThickness="0"
+                        Padding="0"
+                        Margin="5, 4.5"
+                        Template="{DynamicResource ButtonControlTemplate}"
+                        BorderBrush="Transparent">
+                    <Grid Margin="0">
+                        <Ellipse HorizontalAlignment="Left"
+                                 Height="31"
+                                 Stroke="White"
+                                 VerticalAlignment="Top"
+                                 Width="31"/>
+                        <Path Data="M146, 74 L146, 90 162, 82 z"
+                              HorizontalAlignment="Left"
+                              Height="16.042"
+                              Margin="9, 8, 0, 0"
+                              Stretch="Fill" 
+                              VerticalAlignment="Top"
+                              Width="15" Fill="White"/>
+                    </Grid>
+                </Button>
+                <Button Background="Transparent"
+                        BorderThickness="0"
+                        Padding="0"
+                        Margin="5, 4.5"
+                        Template="{DynamicResource ButtonControlTemplate}"
+                        BorderBrush="Transparent">
+                    <Grid Margin="0">
+                        <Ellipse HorizontalAlignment="Left"
+                                 Height="31"
+                                 Stroke="White"
+                                 VerticalAlignment="Top"
+                                 Width="31"/>
+                        <Path Data="M0.12033463,2.6294897E-06 L7.5409961,7.7442644 0,16.042006 z M7.6613361,0 L15.081998,7.7442606 7.5409985,16.042001 z"
+                              Fill="White"
+                              HorizontalAlignment="Left"
+                              Height="16.042"
+                              Margin="8.585,7.916,0,0"
+                              Stretch="Fill"
+                              VerticalAlignment="Top"
+                              Width="15.082"/>
+                    </Grid>
+                </Button>
+                <Button Background="Transparent"
+                        BorderThickness="0"
+                        Margin="5, 4.5"
+                        Padding="0"
+                        Template="{DynamicResource ButtonControlTemplate}"
+                        BorderBrush="Transparent">
+                    <Grid Margin="0">
+                        <Ellipse HorizontalAlignment="Left" Height="31" Stroke="White" VerticalAlignment="Top" Width="31"/>
+                        <Rectangle HorizontalAlignment="Left"
+                                   Height="12"
+                                   Margin="8,10,0,0"
+                                   Stroke="White"
+                                   VerticalAlignment="Top"
+                                   Width="5"
+                                   Fill="White"/>
+                        <Rectangle HorizontalAlignment="Left"
+                                   Height="12"
+                                   Margin="18,10,0,0"
+                                   Stroke="White"
+                                   VerticalAlignment="Top"
+                                   Width="5"
+                                   Fill="White"/>
+                    </Grid>
+                </Button>
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="60"
+                            Height="34">
+                    <Slider Width="50"
+                            Margin="5,0"
+                            VerticalAlignment="Center">
+                    </Slider>
+                    <TextBlock Height="13"
+                               HorizontalAlignment="Right"
+                               Foreground="White"
+                               FontSize="10"
+                               Text="100"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
         <Grid.RowDefinitions>

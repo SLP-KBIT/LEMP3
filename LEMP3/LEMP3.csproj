@@ -75,8 +75,10 @@
     </ApplicationDefinition>
     <Compile Include="Model\Common\Logger.cs" />
     <Compile Include="Model\Common\XMLSupporter.cs" />
+    <Compile Include="Model\Music.cs" />
     <Compile Include="Model\Native\WindowPlacement.cs" />
     <Compile Include="Model\Native\WindowSettings.cs" />
+    <Compile Include="Model\PlayList.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ToolBoxViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

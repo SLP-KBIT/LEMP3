@@ -34,8 +34,9 @@
         </Border.Effect>
         <Grid>
 
-            <Grid Grid.Column="0"
-                  Background="#FF32A4A4">
+            <StackPanel Grid.Column="0"
+                        Orientation="Vertical"
+                        Background="#FF32A4A4">
                 <TextBlock Text="LEMP3"
                            Margin="5, -5, 0 ,0"
                            Height="40"
@@ -44,9 +45,33 @@
                            FontSize="36"
                            FontFamily="Microsoft MHei"
                            Foreground="Azure"/>
-            </Grid>
+                <TextBlock Text="PlayList"
+                           Margin="5, 8, 5 ,0"
+                           Height="14"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           FontSize="10"
+                           FontFamily="Microsoft MHei"
+                           Foreground="Azure"/>
+                <TextBlock Text="History"
+                           Margin="5, 0, 5 ,0"
+                           Height="14"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           FontSize="10"
+                           FontFamily="Microsoft MHei"
+                           Foreground="Azure"/>
+                <TextBlock Text="Config"
+                           Margin="5, 0, 5 ,0"
+                           Height="14"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           FontSize="10"
+                           FontFamily="Microsoft MHei"
+                           Foreground="Azure"/>
+            </StackPanel>
             <ContentControl Grid.Column="1"
-                            Content="{Binding ToolBoxVM}" />
+                            Content="{Binding ToolBoxVM}" FontFamily="Meiryo UI" />
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="2*" />
