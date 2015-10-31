@@ -17,5 +17,10 @@ namespace LEMP3.View.Toolbox
             InitializeComponent();
             ExitButton.Click += (sender, e) => Environment.Exit(0);
         }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }

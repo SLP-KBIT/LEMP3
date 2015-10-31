@@ -159,6 +159,7 @@
                         BorderThickness="0"
                         Margin="5, 4.5"
                         Padding="0"
+                        Command="{Binding PauseCommand}"
                         Template="{DynamicResource ButtonControlTemplate}"
                         BorderBrush="Transparent">
                     <Grid Margin="0">

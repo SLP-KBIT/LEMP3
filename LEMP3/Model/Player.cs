@@ -11,6 +11,8 @@ namespace LEMP3.Model
     public class Player
     {
         private MediaPlayer mediaPlayer = new MediaPlayer();
+        // TODO:
+        // private PlayList playList = new PlayList();
 
         public Player()
         {
@@ -24,9 +26,32 @@ namespace LEMP3.Model
 
         public int Volume { set; get; }
 
-        public void Play(Music music = null)
+        public string PlayingPosition
+        {
+            get
+            {
+                return mediaPlayer.Position.ToString(@"mm\:ss");
+            }
+        }
+
+        public void ChangeVolume()
+        {
+            mediaPlayer.Volume = this.Volume;
+        }
+
+        public void Play()
         {
             mediaPlayer.Play();
+        }
+
+        public void Pause()
+        {
+            mediaPlayer.Pause();
+        }
+
+        private void Open(Uri uri)
+        {
+            mediaPlayer.Open(uri);
         }
     }
 }

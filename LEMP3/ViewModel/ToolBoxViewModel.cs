@@ -21,6 +21,7 @@ namespace LEMP3.ViewModel
             _Player = new Player();
         }
 
+        #region public Player Player
         private Player _Player;
         public Player Player
         {
@@ -34,18 +35,51 @@ namespace LEMP3.ViewModel
             }
             get { return _Player; }
         }
+        #endregion
 
-        public ICommand _PlayCommand;
+        #region public ICommand PlayCommand
+        private ICommand _PlayCommand;
         public ICommand PlayCommand
         {
             get
             {
-                if(_PlayCommand == null)
+                if (_PlayCommand == null)
                 {
                     _PlayCommand = new RelayCommand(() => Player.Play());
                 }
                 return _PlayCommand;
             }
         }
+        #endregion
+
+        #region public ICommand PauseCommand
+        private ICommand _PauseCommand;
+        public ICommand PauseCommand
+        {
+            get
+            {
+                if (_PauseCommand == null)
+                {
+                    _PauseCommand = new RelayCommand(() => Player.Pause());
+                }
+                return _PauseCommand;
+            }
+        }
+        #endregion
+
+        #region public ICommand ChangeVolumeCommand
+        private ICommand _ChangeVolumeCommand;
+        public ICommand ChangeVolumeCommand
+        {
+            get
+            {
+                if (ChangeVolumeCommand == null)
+                {
+                    _ChangeVolumeCommand = new RelayCommand(() => Player.ChangeVolume());
+                }
+                return _ChangeVolumeCommand;
+            }
+        }
+        #endregion
     }
 }
