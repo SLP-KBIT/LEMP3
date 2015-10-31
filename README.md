@@ -25,7 +25,9 @@ LeapMotionを使ったちょっと楽しいMP3音楽プレイヤー : LEMP3
   - **用途** : MVVM(Model/View/ViewModel)パターン用インフラストラクチャ
   - **ライセンス** : The MIT License (MIT)
 
-- LeepMotionSDK
+- [LeapSDK](https://developer.leapmotion.com/)
+  - **用途** : LeapMotionのセンサー値取得
+  - **ライセンス** : [https://central.leapmotion.com/agreements/SdkAgreement](https://central.leapmotion.com/agreements/SdkAgreement)
 
 ## LICENSE
 
