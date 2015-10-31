@@ -82,7 +82,7 @@
               VerticalAlignment="Bottom" 
               Margin="0,5,0,5">
             <StackPanel Orientation="Horizontal">
-                        
+
                 <Button Background="Transparent"
                         Margin="5, 4.5"
                         BorderThickness="0"
@@ -115,6 +115,7 @@
                         BorderThickness="0"
                         Padding="0"
                         Margin="5, 4.5"
+                        Command="{Binding PlayCommand}"
                         Template="{DynamicResource ButtonControlTemplate}"
                         BorderBrush="Transparent">
                     <Grid Margin="0">
@@ -184,13 +185,24 @@
                             Height="34">
                     <Slider Width="50"
                             Margin="5,0"
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center"
+                            Maximum="100"
+                            Value="{Binding Player.Volume}"
+                            IsDirectionReversed="True" SmallChange="1" RenderTransformOrigin="0.5,0.5">
+                        <Slider.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Slider.RenderTransform>
                     </Slider>
                     <TextBlock Height="13"
                                HorizontalAlignment="Right"
                                Foreground="White"
-                               FontSize="10"
-                               Text="100"/>
+                               Text="{Binding Player.Volume}"
+                               FontSize="10" />
                 </StackPanel>
             </StackPanel>
         </Grid>

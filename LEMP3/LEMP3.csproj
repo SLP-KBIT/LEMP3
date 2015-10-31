@@ -78,6 +78,7 @@
     <Compile Include="Model\Music.cs" />
     <Compile Include="Model\Native\WindowPlacement.cs" />
     <Compile Include="Model\Native\WindowSettings.cs" />
+    <Compile Include="Model\Player.cs" />
     <Compile Include="Model\PlayList.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ToolBoxViewModel.cs" />
