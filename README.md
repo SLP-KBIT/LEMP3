@@ -1,6 +1,5 @@
 # LEMP3 (Little Enjoy Music Player)
 
-[![BuildStatus](https://img.shields.io/appveyor/ci/maxmellon/lemp3/master.svg?style=flat-square)](https://ci.appveyor.com/project/MaxMEllon/lemp3/branch/master)
 [![Release](https://img.shields.io/github/release/SLP-KBIT/LEMP3.svg?style=flat-square)](https://github.com/SLP-KBIT/LEMP3/releases/latest)
 [![License](https://img.shields.io/github/license/SLP-KBIT/LEMP3.svg?style=flat-square)](https://github.com/SLP-KBIT/LEMP3/blob/master/LICENSE.txt)
 
