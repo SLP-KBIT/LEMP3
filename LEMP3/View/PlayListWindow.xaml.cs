@@ -14,6 +14,7 @@ namespace LEMP3.View
         {
             InitializeComponent();
             MouseLeftButtonDown += (sender, e) => this.DragMove();
+            this.CloseButton.Click += (sender, e) => this.Close();
         }
     }
 }

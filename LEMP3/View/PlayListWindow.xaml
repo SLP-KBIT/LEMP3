@@ -35,10 +35,16 @@
             <Grid Grid.Row="0"
                   Background="#FF32A4A4">
                 <TextBlock Text="PlayList"
+                           Margin="5,0,200,0"
                            FontFamily="Microsoft MHei"
                            FontSize="36"
                            Foreground="White"
                            Background="Transparent" />
+                <Button Name="CloseButton"
+                        Content="r"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource CaptionButtonStyleKey}" />
             </Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="55" />
