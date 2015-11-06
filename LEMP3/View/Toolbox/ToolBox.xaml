@@ -62,7 +62,7 @@
                        FontSize="20"
                        FontFamily="Microsoft JhengHei UI"
                        Foreground="White"
-                       Text="00:00" />
+                       Text="{Binding CurrentTime}" />
 
             <Button Name="ExitButton"
                     Grid.Row="0"

@@ -77,12 +77,16 @@
     <Compile Include="Model\Common\XMLSupporter.cs" />
     <Compile Include="Model\Music.cs" />
     <Compile Include="Model\Native\WindowPlacement.cs" />
-    <Compile Include="Model\Native\WindowSettings.cs" />
+    <Compile Include="Model\WindowSettings.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\PlayList.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PlayListViewModel.cs" />
     <Compile Include="ViewModel\ToolBoxViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\PlayListWindow.xaml.cs">
+      <DependentUpon>PlayListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Toolbox\ToolBox.xaml.cs">
       <DependentUpon>ToolBox.xaml</DependentUpon>
     </Compile>
@@ -93,6 +97,10 @@
     <Page Include="Skins\Button\MetroButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\PlayListSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +117,10 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlayListWindow.xaml">
+      <SubType>Form</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Toolbox\ToolBox.xaml">
       <SubType>Form</SubType>

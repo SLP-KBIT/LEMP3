@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using LEMP3.Model;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace LEMP3.ViewModel
@@ -37,6 +39,22 @@ namespace LEMP3.ViewModel
         }
         #endregion
 
+        #region public string CurrentTime
+        private string _CurrentTime;
+        public string CurrentTime
+        {
+            set
+            {
+                if (_CurrentTime != value)
+                {
+                    _CurrentTime = value;
+                    RaisePropertyChanged("CurrentTime");
+                }
+            }
+            get { return _CurrentTime; }
+        }
+        #endregion
+
         #region public ICommand PlayCommand
         private ICommand _PlayCommand;
         public ICommand PlayCommand
@@ -46,6 +64,7 @@ namespace LEMP3.ViewModel
                 if (_PlayCommand == null)
                 {
                     _PlayCommand = new RelayCommand(() => Player.Play());
+                    UpdateTime();
                 }
                 return _PlayCommand;
             }
@@ -81,5 +100,20 @@ namespace LEMP3.ViewModel
             }
         }
         #endregion
+
+        private async void UpdateTime()
+        {
+            await Task.Run(
+                () =>
+                {
+                    TimerCallback timerDelegate = new TimerCallback(
+                        (_) =>
+                        {
+                            CurrentTime = Player.PlayingPosition;
+                        });
+                    Timer timer = new Timer(timerDelegate, null, 0, 500);
+                });
+        }
+       
     }
 }
